@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>äººæ°é»å½±æéå¬å¸ | People Film Co., Ltd.</title>
+<title>人民電影有限公司 | People Film Co., Ltd.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Noto+Serif+TC:wght@300;400;500;600;700;900&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -50,7 +50,7 @@ body {
   color: var(--black);
 }
 
-/* ââ FILM GRAIN OVERLAY ââ */
+/* ── FILM GRAIN OVERLAY ── */
 .grain {
   position: fixed;
   top: -50%;
@@ -72,7 +72,7 @@ body {
   90% { transform: translate(-1%, 7%); }
 }
 
-/* ââ NAVIGATION ââ */
+/* ── NAVIGATION ── */
 nav {
   position: fixed;
   top: 0;
@@ -130,7 +130,7 @@ nav.scrolled {
 .nav-links a:hover { color: var(--gold); }
 .nav-links a:hover::after { width: 100%; }
 
-/* ââ MOBILE NAV ââ */
+/* ── MOBILE NAV ── */
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -148,7 +148,7 @@ nav.scrolled {
   transition: all 0.3s ease;
 }
 
-/* ââ HERO ââ */
+/* ── HERO ── */
 .hero {
   position: relative;
   height: 100vh;
@@ -287,7 +287,7 @@ nav.scrolled {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ââ SECTION COMMON ââ */
+/* ── SECTION COMMON ── */
 section {
   position: relative;
   padding: 8rem 3.5rem;
@@ -319,7 +319,7 @@ section {
   letter-spacing: 0.08em;
 }
 
-/* ââ REVEAL ANIMATION ââ */
+/* ── REVEAL ANIMATION ── */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -335,7 +335,7 @@ section {
 .reveal-delay-3 { transition-delay: 0.45s; }
 .reveal-delay-4 { transition-delay: 0.6s; }
 
-/* ââ ABOUT ââ */
+/* ── ABOUT ── */
 #about {
   background: var(--deep);
   border-top: 1px solid rgba(201, 168, 76, 0.08);
@@ -407,7 +407,7 @@ section {
   opacity: 0.3;
 }
 
-/* ââ CINEMATIC GALLERY ââ */
+/* ── CINEMATIC GALLERY ── */
 #works {
   background: var(--black);
   padding-bottom: 6rem;
@@ -643,7 +643,7 @@ section {
   display: none;
 }
 
-/* ââ AWARDS BAR ââ */
+/* ── AWARDS BAR ── */
 .awards-bar {
   max-width: 1400px;
   margin: 5rem auto 0;
@@ -672,7 +672,7 @@ section {
   color: var(--ash);
 }
 
-/* ââ TEAM ââ */
+/* ── TEAM ── */
 #team {
   background: var(--deep);
   border-top: 1px solid rgba(201, 168, 76, 0.08);
@@ -742,7 +742,7 @@ section {
   color: var(--cream);
 }
 
-/* ââ CONTACT ââ */
+/* ── CONTACT ── */
 #contact {
   background: var(--black);
   border-top: 1px solid rgba(201, 168, 76, 0.08);
@@ -850,7 +850,7 @@ section {
   transform: translateX(4px);
 }
 
-/* ââ FOOTER ââ */
+/* ── FOOTER ── */
 footer {
   background: var(--black);
   border-top: 1px solid rgba(201, 168, 76, 0.08);
@@ -889,7 +889,7 @@ footer {
 }
 .footer-social a:hover { color: var(--gold); }
 
-/* ââ RESPONSIVE ââ */
+/* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   section { padding: 6rem 2.5rem; }
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -952,30 +952,30 @@ footer {
 
 <div class="grain"></div>
 
-<!-- ââ NAVIGATION ââ -->
+<!-- ── NAVIGATION ── -->
 <nav id="navbar">
-  <a href="#hero" class="nav-logo">äººæ°é»å½±</a>
+  <a href="#hero" class="nav-logo">人民電影</a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#about">éæ¼</a></li>
-    <li><a href="#works">ä½å</a></li>
-    <li><a href="#team">åé</a></li>
-    <li><a href="#contact">è¯çµ¡</a></li>
+    <li><a href="#about">關於</a></li>
+    <li><a href="#works">作品</a></li>
+    <li><a href="#team">團隊</a></li>
+    <li><a href="#contact">聯絡</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- ââ HERO ââ -->
+<!-- ── HERO ── -->
 <section class="hero" id="hero">
   <div class="hero-bg"></div>
   <div class="hero-lines"></div>
   <div class="hero-content">
     <p class="hero-label">Feature Films &middot; Animation</p>
-    <h1 class="hero-title">äººæ°é»å½±</h1>
+    <h1 class="hero-title">人民電影</h1>
     <p class="hero-title-en">People Film Co., Ltd.</p>
     <div class="hero-line"></div>
-    <p class="hero-tagline">ä»¥å½±åæ¸å¯«æä»£ï¼ç¨æäºç§è¦äººå¿</p>
+    <p class="hero-tagline">以影像書寫時代，用故事照見人心</p>
   </div>
   <div class="hero-scroll">
     <span>Scroll</span>
@@ -983,40 +983,40 @@ footer {
   </div>
 </section>
 
-<!-- ââ ABOUT ââ -->
+<!-- ── ABOUT ── -->
 <section id="about">
   <div class="about-grid">
     <div class="about-text">
       <div class="reveal">
         <p class="section-label">About Us</p>
-        <h2 class="section-title">éæ¼äººæ°é»å½±</h2>
+        <h2 class="section-title">關於人民電影</h2>
         <p class="section-title-en">Our Story</p>
       </div>
       <div class="reveal reveal-delay-1">
-        <p>äººæ°é»å½±æéå¬å¸æç«æ¼å°ç£ï¼è´åæ¼åµä½å·æç¨ç¹è¦è§èæ·±å»äººæéæ·çå½±åä½åãæåç¸ä¿¡ï¼æ¯ä¸é¨é»å½±é½æ¯ä¸é¢é¡å­ï¼æ ç§èæä»£çé¢è²èäººå¿çæº«åº¦ã</p>
+        <p>人民電影有限公司成立於台灣，致力於創作具有獨特視角與深刻人文關懷的影像作品。我們相信，每一部電影都是一面鏡子，映照著時代的面貌與人心的溫度。</p>
       </div>
       <div class="reveal reveal-delay-2">
-        <p>å¾åæé·çå°åç«åµä½ï¼æåçåéä»¥ç²¾æ¹çæèåç¡ççåµæ°ç²¾ç¥ï¼æ¢ç´¢å½±åæäºçç¡éå¯è½ãæ¯ä¸åé¡é ­ãæ¯ä¸å¹ç«é¢ï¼é½æ¿è¼èæåå°æäºçåºèèå°èè¡çæ¬æã</p>
+        <p>從劇情長片到動畫創作，我們的團隊以精湛的技藝和無畏的創新精神，探索影像效事的無限可能。每一個鏡頭、每一幀畫面，都承載著我們對故事的基著與對藝術的敬意。</p>
       </div>
       <div class="reveal reveal-delay-3">
-        <p>æåä¸åæ¯å½±åçè£½é èï¼æ´æ¯æä»£çè¨éèãééé¡é ­ï¼æåææçæ´»ä¸­æçå¯¦ççå»ï¼å°ä¹è½åçºè§¸åäººå¿çèè¡ä½åã</p>
+        <p>我們不僅是影像的製造者，更是時代的記錄者。透過鏡頭，我們捕捉生活中最真實的片刻，將之轉化為觸動人心的藝術作品。</p>
       </div>
       <div class="about-stats reveal reveal-delay-4">
         <div class="stat">
           <div class="stat-number">15+</div>
-          <div class="stat-label">ä½å Productions</div>
+          <div class="stat-label">作品 Productions</div>
         </div>
         <div class="stat">
           <div class="stat-number">30+</div>
-          <div class="stat-label">çé  Awards</div>
+          <div class="stat-label">獎項 Awards</div>
         </div>
         <div class="stat">
           <div class="stat-number">10+</div>
-          <div class="stat-label">å¹´ç¶é© Years</div>
+          <div class="stat-label">年經驗 Years</div>
         </div>
         <div class="stat">
           <div class="stat-number">50+</div>
-          <div class="stat-label">åä½å¤¥ä¼´ Partners</div>
+          <div class="stat-label">合作夥伴 Partners</div>
         </div>
       </div>
     </div>
@@ -1027,27 +1027,27 @@ footer {
   </div>
 </section>
 
-<!-- ââ WORKS: CINEMATIC GALLERY ââ -->
+<!-- ── WORKS: CINEMATIC GALLERY ── -->
 <section id="works">
   <div class="works-header">
     <div class="reveal">
       <p class="section-label">Filmography</p>
-      <h2 class="section-title">ç²¾é¸ä½å</h2>
+      <h2 class="section-title">精選作品</h2>
       <p class="section-title-en">Selected Works</p>
     </div>
   </div>
 
-  <!-- Featured film â ultra-wide cinematic -->
+  <!-- Featured film — ultra-wide cinematic -->
   <div class="gallery-hero reveal">
     <div class="gallery-hero-img" style="background-image: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1600&q=80');"></div>
     <div class="gallery-hero-overlay"></div>
     <div class="gallery-hero-number">01</div>
     <div class="gallery-hero-content">
-      <span class="gallery-hero-badge">ææ°åæé·ç Latest Feature</span>
-      <h3 class="gallery-hero-title">æ®è²æå</h3>
+      <span class="gallery-hero-badge">最新劇情長片 Latest Feature</span>
+      <h3 class="gallery-hero-title">暮色時分</h3>
       <p class="gallery-hero-title-en">Twilight Hours</p>
-      <p class="gallery-hero-meta">2024 &middot; å°æ¼ æå­æ &middot; 112 min &middot; åæé·ç</p>
-      <p class="gallery-hero-desc">ä¸æ®µè·¨è¶ä¸ä»£äººçå®¶æè¨æ¶ï¼å¨å°åçæ®è²ä¸­éæ¼¸æµ®ç¾ãç¶éå»èç¾å¨äº¤é¯ï¼çç¸æ¯å¦è½ç§äº®åæ¹çè·¯ï¼</p>
+      <p class="gallery-hero-meta">2024 &middot; 導演 林子揚 &middot; 112 min &middot; 劇情長片</p>
+      <p class="gallery-hero-desc">一段跨越三代人的家族記憶，在台北的暮色中逐漸浮現。當過去與現在交錯，真相是否能照亮前方的路？</p>
     </div>
     <div class="gallery-hero-play"></div>
     <div class="gallery-hero-border"></div>
@@ -1059,8 +1059,8 @@ footer {
       <div class="gallery-item-img" style="background-image: url('https://images.unsplash.com/photo-1534447677768-be436bb09401?w=600&q=80');"></div>
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-content">
-        <span class="gallery-item-type">åç« Animation</span>
-        <h3 class="gallery-item-title">é²ä¹å½¼ç«¾</h3>
+        <span class="gallery-item-type">動畫 Animation</span>
+        <h3 class="gallery-item-title">雲之彼竾</h3>
         <p class="gallery-item-en">Beyond the Clouds</p>
         <span class="gallery-item-year">2023</span>
       </div>
@@ -1070,8 +1070,8 @@ footer {
       <div class="gallery-item-img" style="background-image: url('https://images.unsplash.com/photo-1518676590747-1e3dcf5a54ba?w=600&q=80');"></div>
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-content">
-        <span class="gallery-item-type">åæé·ç Feature</span>
-        <h3 class="gallery-item-title">åæ¹ä»¥å</h3>
+        <span class="gallery-item-type">劇情長片 Feature</span>
+        <h3 class="gallery-item-title">南方以南</h3>
         <p class="gallery-item-en">South of South</p>
         <span class="gallery-item-year">2023</span>
       </div>
@@ -1081,8 +1081,8 @@ footer {
       <div class="gallery-item-img" style="background-image: url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&q=80');"></div>
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-content">
-        <span class="gallery-item-type">åç« Animation</span>
-        <h3 class="gallery-item-title">ç¹ªå¤¢è</h3>
+        <span class="gallery-item-type">動畫 Animation</span>
+        <h3 class="gallery-item-title">繪夢者</h3>
         <p class="gallery-item-en">The Dream Painter</p>
         <span class="gallery-item-year">2022</span>
       </div>
@@ -1092,8 +1092,8 @@ footer {
       <div class="gallery-item-img" style="background-image: url('https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=600&q=80');"></div>
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-content">
-        <span class="gallery-item-type">åæé·ç Feature</span>
-        <h3 class="gallery-item-title">æ¥åä¹ä¸</h3>
+        <span class="gallery-item-type">劇情長片 Feature</span>
+        <h3 class="gallery-item-title">日光之下</h3>
         <p class="gallery-item-en">Under the Sunlight</p>
         <span class="gallery-item-year">2021</span>
       </div>
@@ -1103,8 +1103,8 @@ footer {
       <div class="gallery-item-img" style="background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&q=80');"></div>
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-content">
-        <span class="gallery-item-type">åç«ç­ç Short</span>
-        <h3 class="gallery-item-title">æµ®çç´</h3>
+        <span class="gallery-item-type">動畫短片 Short</span>
+        <h3 class="gallery-item-title">浮生紀</h3>
         <p class="gallery-item-en">Floating Life</p>
         <span class="gallery-item-year">2021</span>
       </div>
@@ -1115,107 +1115,107 @@ footer {
   <div class="awards-bar reveal">
     <div class="award-item">
       <div class="award-icon">&#9670;</div>
-      <div class="award-name">éé¦¬ç</div>
+      <div class="award-name">金馬獎</div>
     </div>
     <div class="award-item">
       <div class="award-icon">&#9670;</div>
-      <div class="award-name">å°åé»å½±ç¯</div>
+      <div class="award-name">台北電影節</div>
     </div>
     <div class="award-item">
       <div class="award-icon">&#9670;</div>
-      <div class="award-name">éå±±å½±å±</div>
+      <div class="award-name">釜山影展</div>
     </div>
     <div class="award-item">
       <div class="award-icon">&#9670;</div>
-      <div class="award-name">æ±äº¬åç«ç</div>
+      <div class="award-name">東京動畫獎</div>
     </div>
     <div class="award-item">
       <div class="award-icon">&#9670;</div>
-      <div class="award-name">é¹¿ç¹ä¸¹å½±å±</div>
+      <div class="award-name">鹿特丹影展</div>
     </div>
   </div>
 </section>
 
-<!-- ââ TEAM ââ -->
+<!-- ── TEAM ── -->
 <section id="team">
   <div class="team-inner">
     <div class="reveal">
       <p class="section-label">Our Team</p>
-      <h2 class="section-title">æ ¸å¿åé</h2>
+      <h2 class="section-title">核心團隊</h2>
       <p class="section-title-en">The People Behind the Films</p>
     </div>
     <p class="team-description reveal reveal-delay-1">
-      æåçåéå¯èäºä¾èªå°ç£ååéçåªç§é»å½±èåç«åµä½èãæ¯ä½æå¡é½å¸¶èå°å½±åèè¡çç±æèç¨ç¹çåµä½è¦éï¼å±åæé è§¸åäººå¿çä½åã
+      我們的團隊匯聚了來自台灣及國際的優秀電影與動畫創作者。每位成員都帶著對影像藝術的熱情與獨特的創作視野，共同打造觸動人心的作品。
     </p>
     <div class="team-grid">
       <div class="team-member reveal reveal-delay-1">
         <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80');"></div>
         <p class="team-role">Founder / Producer</p>
-        <p class="team-name">åµè¾¦äºº / è£½çäºº</p>
+        <p class="team-name">創辦人 / 製片人</p>
       </div>
       <div class="team-member reveal reveal-delay-2">
         <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80');"></div>
         <p class="team-role">Director</p>
-        <p class="team-name">å°æ¼</p>
+        <p class="team-name">導演</p>
       </div>
       <div class="team-member reveal reveal-delay-3">
         <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80');"></div>
         <p class="team-role">Animation Director</p>
-        <p class="team-name">åç«ç¸½ç£</p>
+        <p class="team-name">動畫總監</p>
       </div>
       <div class="team-member reveal reveal-delay-4">
         <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80');"></div>
         <p class="team-role">Cinematographer</p>
-        <p class="team-name">æå½±æå°</p>
+        <p class="team-name">攝影指導</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ââ CONTACT ââ -->
+<!-- ── CONTACT ── -->
 <section id="contact">
   <div class="contact-inner">
     <div class="contact-info">
       <div class="reveal">
         <p class="section-label">Get in Touch</p>
-        <h2 class="section-title">è¯çµ¡æå</h2>
+        <h2 class="section-title">聯絡我們</h2>
         <p class="section-title-en">Contact</p>
       </div>
-      <p class="reveal reveal-delay-1">ç¡è«æ¯åä½ææ¡ãç¼è¡æ´½è©¢æåªé«æ¡è¨ªï¼æ­¡è¿èæåè¯ç¹«ãæåæå¾èæ¨ä¸ååµé åäººçæäºã</p>
+      <p class="reveal reveal-delay-1">無論是合作提案、發行洽詢或媒體採訪，歡迎與我們聯繫。我們期待與您一同創造動人的故事。</p>
       <div class="contact-detail reveal reveal-delay-2">
         <p class="contact-detail-label">Email</p>
         <p class="contact-detail-value"><a href="mailto:info@peoplefilm.com.tw">info@peoplefilm.com.tw</a></p>
       </div>
       <div class="contact-detail reveal reveal-delay-3">
-        <p class="contact-detail-label">é»è©± Phone</p>
+        <p class="contact-detail-label">電話 Phone</p>
         <p class="contact-detail-value">+886 2 XXXX XXXX</p>
       </div>
       <div class="contact-detail reveal reveal-delay-4">
-        <p class="contact-detail-label">å°å Address</p>
-        <p class="contact-detail-value">å°åå¸ä¿¡ç¾©å<br>Xinyi District, Taipei, Taiwan</p>
+        <p class="contact-detail-label">地址 Address</p>
+        <p class="contact-detail-value">台北市信義區<br>Xinyi District, Taipei, Taiwan</p>
       </div>
     </div>
     <div class="contact-form">
       <form id="contactForm" onsubmit="return false;">
         <div class="form-group reveal reveal-delay-1">
-          <label for="name">å§å Name</label>
+          <label for="name">姓名 Name</label>
           <input type="text" id="name" placeholder="Your name">
         </div>
         <div class="form-group reveal reveal-delay-2">
-          <label for="email">é»å­éµä»¶ Email</label>
+          <label for="email">電子郵件 Email</label>
           <input type="email" id="email" placeholder="your@email.com">
         </div>
         <div class="form-group reveal reveal-delay-3">
-          <label for="subject">ä¸»æ¨ Subject</label>
+          <label for="subject">主旨 Subject</label>
           <input type="text" id="subject" placeholder="Subject">
         </div>
         <div class="form-group reveal reveal-delay-4">
-          <label for="message">è¨æ¯ Message</label>
+          <label for="message">訊息 Message</label>
           <textarea id="message" placeholder="Your message..."></textarea>
         </div>
         <div class="reveal reveal-delay-4">
           <button type="submit" class="submit-btn">
-            å³éè¨æ¯ Send
+            傳送訊息 Send
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -1226,10 +1226,10 @@ footer {
   </div>
 </section>
 
-<!-- ââ FOOTER ââ -->
+<!-- ── FOOTER ── -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">äººæ°é»å½±æéå¬å¸</div>
+    <div class="footer-logo">人民電影有限公司</div>
     <p class="footer-copy">&copy; 2026 People Film Co., Ltd. All rights reserved.</p>
     <div class="footer-social">
       <a href="#">Facebook</a>
@@ -1240,13 +1240,13 @@ footer {
 </footer>
 
 <script>
-// ââ NAV SCROLL EFFECT ââ
+// ── NAV SCROLL EFFECT ──
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-// ââ MOBILE NAV ââ
+// ── MOBILE NAV ──
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 navToggle.addEventListener('click', () => {
@@ -1260,7 +1260,7 @@ navLinks.querySelectorAll('a').forEach(link => {
   });
 });
 
-// ââ SCROLL REVEAL ââ
+// ── SCROLL REVEAL ──
 const revealElements = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -1274,7 +1274,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 });
 revealElements.forEach(el => revealObserver.observe(el));
 
-// ââ SMOOTH SCROLL ââ
+// ── SMOOTH SCROLL ──
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
