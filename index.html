@@ -682,64 +682,40 @@ section {
   margin: 0 auto;
 }
 .team-description {
-  max-width: 650px;
+  max-width: 750px;
+  font-size: 1.05rem;
+  color: var(--silver);
+  line-height: 2.2;
+  margin-bottom: 2.5rem;
+}
+.team-text-block {
+  max-width: 750px;
+  padding: 2.5rem 0;
+  border-top: 1px solid rgba(201, 168, 76, 0.1);
+}
+.team-text-block p {
   font-size: 1rem;
   color: var(--silver);
-  line-height: 2;
-  margin-bottom: 4rem;
+  line-height: 2.1;
+  margin-bottom: 1.8rem;
 }
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+.team-text-block p:last-child {
+  margin-bottom: 0;
 }
-.team-member {
-  position: relative;
-  text-align: center;
+.team-roles-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  margin-top: 2rem;
 }
-.team-photo {
-  width: 100%;
-  aspect-ratio: 3/4;
-  margin-bottom: 1.5rem;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.5s ease;
-  background-size: cover;
-  background-position: center top;
-  filter: saturate(0.6) brightness(0.85);
-}
-.team-photo::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border: 1px solid rgba(201, 168, 76, 0.06);
-  z-index: 1;
-}
-.team-photo::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40%;
-  background: linear-gradient(0deg, rgba(17,17,17,0.5) 0%, transparent 100%);
-}
-.team-member:hover .team-photo {
-  transform: translateY(-4px);
-  filter: saturate(0.8) brightness(0.9);
-}
-.team-role {
-  font-size: 0.6rem;
-  letter-spacing: 0.3em;
+.team-role-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 0.5rem;
-}
-.team-name {
-  font-family: var(--font-display-zh);
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--cream);
+  padding: 0.5rem 1.2rem;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  white-space: nowrap;
 }
 
 /* ── CONTACT ── */
@@ -896,7 +872,6 @@ footer {
   .about-visual { height: 350px; }
   .gallery-strip { grid-template-columns: repeat(3, 1fr); }
   .gallery-hero-content { padding: 3rem; }
-  .team-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-inner { grid-template-columns: 1fr; gap: 4rem; }
 }
 @media (max-width: 768px) {
@@ -935,7 +910,6 @@ footer {
   .gallery-hero-play { width: 60px; height: 60px; right: 8%; }
   .gallery-hero-play::before { border-left-width: 14px; border-top-width: 8px; border-bottom-width: 8px; }
   .gallery-hero-number { font-size: 3rem; top: 1.5rem; right: 1.5rem; }
-  .team-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .about-stats { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .awards-bar { gap: 2rem; }
   .footer-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
@@ -943,7 +917,6 @@ footer {
 @media (max-width: 480px) {
   .gallery-strip { grid-template-columns: 1fr 1fr; }
   .gallery-hero-desc { display: none; }
-  .team-grid { grid-template-columns: 1fr; max-width: 280px; margin: 0 auto; }
   .about-stats { grid-template-columns: 1fr; }
 }
 </style>
@@ -993,10 +966,10 @@ footer {
         <p class="section-title-en">Our Story</p>
       </div>
       <div class="reveal reveal-delay-1">
-        <p>人民電影有限公司成立於台灣，致力於創作具有獨特視角與深刻人文關懷的影像作品。我們相信，每一部電影都是一面鏡子，映照著時代的面貌與人心的溫度。</p>
+        <p>人民電影有限公司成立於台灣，致力於創作具有獨特視角與深刻人文關懷的影像作品。我們眸信，每一部電影都是一面鏡子，映照著時代的面貌與人心的溫度。</p>
       </div>
       <div class="reveal reveal-delay-2">
-        <p>從劇情長片到動畫創作，我們的團隊以精湛的技藝和無畏的創新精神，探索影像效事的無限可能。每一個鏡頭、每一幀畫面，都承載著我們對故事的基著與對藝術的敬意。</p>
+        <p>從劇情長片到動畫創作，我們的團隊以精湛的技藝和無畏的創新精神，探索影像敘事的無限可能。每一個鏡頭、每一幀畫面，都承載著我們對故事的埴著與對藝術的敬意。</p>
       </div>
       <div class="reveal reveal-delay-3">
         <p>我們不僅是影像的製造者，更是時代的記錄者。透過鏡頭，我們捕捉生活中最真實的片刻，將之轉化為觸動人心的藝術作品。</p>
@@ -1032,7 +1005,7 @@ footer {
   <div class="works-header">
     <div class="reveal">
       <p class="section-label">Filmography</p>
-      <h2 class="section-title">精選作品</h2>
+      <h2 class="section-title">精禁作品</h2>
       <p class="section-title-en">Selected Works</p>
     </div>
   </div>
@@ -1047,7 +1020,7 @@ footer {
       <h3 class="gallery-hero-title">暮色時分</h3>
       <p class="gallery-hero-title-en">Twilight Hours</p>
       <p class="gallery-hero-meta">2024 &middot; 導演 林子揚 &middot; 112 min &middot; 劇情長片</p>
-      <p class="gallery-hero-desc">一段跨越三代人的家族記憶，在台北的暮色中逐漸浮現。當過去與現在交錯，真相是否能照亮前方的路？</p>
+      <p class="gallery-hero-desc">一段跨越三代人的家族訖憶，在台北的暮色中逐漸浮現。當過去與現在交錯，真相是否能照亮前方的路？</p>
     </div>
     <div class="gallery-hero-play"></div>
     <div class="gallery-hero-border"></div>
@@ -1060,7 +1033,7 @@ footer {
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-content">
         <span class="gallery-item-type">動畫 Animation</span>
-        <h3 class="gallery-item-title">雲之彼竾</h3>
+        <h3 class="gallery-item-title">雲之彼端</h3>
         <p class="gallery-item-en">Beyond the Clouds</p>
         <span class="gallery-item-year">2023</span>
       </div>
@@ -1145,28 +1118,18 @@ footer {
       <p class="section-title-en">The People Behind the Films</p>
     </div>
     <p class="team-description reveal reveal-delay-1">
-      我們的團隊匯聚了來自台灣及國際的優秀電影與動畫創作者。每位成員都帶著對影像藝術的熱情與獨特的創作視野，共同打造觸動人心的作品。
+      我們的團隊匯聚了來自台灣及國際的優秀電影與動畫創作者。每位成員都帶著對影像藝術的熱惂與獨特的創作視野，共同打造觸動人心的作品。
     </p>
-    <div class="team-grid">
-      <div class="team-member reveal reveal-delay-1">
-        <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80');"></div>
-        <p class="team-role">Founder / Producer</p>
-        <p class="team-name">創辦人 / 製片人</p>
-      </div>
-      <div class="team-member reveal reveal-delay-2">
-        <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80');"></div>
-        <p class="team-role">Director</p>
-        <p class="team-name">導演</p>
-      </div>
-      <div class="team-member reveal reveal-delay-3">
-        <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80');"></div>
-        <p class="team-role">Animation Director</p>
-        <p class="team-name">動畫總監</p>
-      </div>
-      <div class="team-member reveal reveal-delay-4">
-        <div class="team-photo" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80');"></div>
-        <p class="team-role">Cinematographer</p>
-        <p class="team-name">攝影指導</p>
+    <div class="team-text-block reveal reveal-delay-2">
+      <p>人民電影由一群熱愛影像創作的夥伴共同組成。團隊成員橫跨導演、製片、動畫、攝影、美術及後期製作等領域，擁有豐富的實戰經驗與國際合作背景。</p>
+      <p>我們相信好的故事來自多元的視角。團隊中有深耕紀錄片的資深導演、專注實驗動畫的創作者、擅長光影敘事的攝影師，以及串連每一個環節的製片人。正是這樣不同背景的碰撞與交融，讓我們的作品能跨越語言與文化，觸及更廣闊的觀眾。</p>
+      <div class="team-roles-list">
+        <span class="team-role-tag">導演</span>
+        <span class="team-role-tag">製片</span>
+        <span class="team-role-tag">動畫</span>
+        <span class="team-role-tag">攝影</span>
+        <span class="team-role-tag">美術設計</span>
+        <span class="team-role-tag">後期製作</span>
       </div>
     </div>
   </div>
@@ -1181,7 +1144,7 @@ footer {
         <h2 class="section-title">聯絡我們</h2>
         <p class="section-title-en">Contact</p>
       </div>
-      <p class="reveal reveal-delay-1">無論是合作提案、發行洽詢或媒體採訪，歡迎與我們聯繫。我們期待與您一同創造動人的故事。</p>
+      <p class="reveal reveal-delay-1">無論是合作提案、發行派詡或媒體採訪，歡迎與我們聯繫。我們期待與您一同創造動人的故事。</p>
       <div class="contact-detail reveal reveal-delay-2">
         <p class="contact-detail-label">Email</p>
         <p class="contact-detail-value"><a href="mailto:info@peoplefilm.com.tw">info@peoplefilm.com.tw</a></p>
