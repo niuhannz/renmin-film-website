@@ -350,6 +350,122 @@
       font-style: normal;
     }
 
+    /* --- TEAM / CAST & CREW --- */
+    .team {
+      padding: 6rem 6vw;
+      border-top: 1px solid rgba(201, 168, 76, 0.08);
+    }
+
+    .team-header {
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 3rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem;
+    }
+
+    .team-card {
+      text-align: center;
+    }
+
+    .team-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 1rem;
+      display: block;
+      border: 1.5px solid rgba(201, 168, 76, 0.25);
+      filter: grayscale(30%) contrast(1.05);
+      transition: all 0.4s ease;
+    }
+
+    .team-card:hover .team-photo {
+      filter: grayscale(0%);
+      border-color: var(--gold);
+    }
+
+    .team-initial {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid rgba(201, 168, 76, 0.25);
+      background: rgba(201, 168, 76, 0.05);
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: rgba(201, 168, 76, 0.5);
+      transition: all 0.4s ease;
+    }
+
+    .team-card:hover .team-initial {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(201, 168, 76, 0.08);
+    }
+
+    .team-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 0.2rem;
+      letter-spacing: 0.02em;
+    }
+
+    .team-name-zh {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 0.8rem;
+      color: rgba(240, 236, 228, 0.45);
+      margin-bottom: 0.5rem;
+    }
+
+    .team-role {
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+
+    .team-bio {
+      font-size: 0.78rem;
+      line-height: 1.7;
+      color: var(--ash);
+    }
+
+    @media (max-width: 1024px) {
+      .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .team { padding: 4rem 5vw; }
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+
     /* --- BACK TO HOME CTA --- */
     .back-cta {
       padding: 5rem 6vw;
@@ -534,6 +650,64 @@
       <div class="still reveal reveal-delay-2">
         <img src="/commandment/still-portrait.jpg" alt="Commandment — Jacob portrait">
       </div>
+    </div>
+  </div>
+
+  <!-- CAST & CREW -->
+  <div class="team">
+    <p class="team-header reveal"><span data-lang-zh>演員與主創</span><span data-lang-en>Cast &amp; Crew</span></p>
+    <div class="team-grid">
+
+      <!-- Niu Han -->
+      <div class="team-card reveal">
+        <img class="team-photo" src="/commandment/niuhan-profile.jpg" alt="Niu Han">
+        <p class="team-name">Niu Han</p>
+        <p class="team-name-zh">牛涵</p>
+        <p class="team-role"><span data-lang-zh>導演 / 編劇</span><span data-lang-en>Director / Writer</span></p>
+        <p class="team-bio" data-lang-zh>台灣電影導演，人民電影有限公司創辦人。作品關注信仰、家庭與道德的複雜交織。</p>
+        <p class="team-bio" data-lang-en>Taiwanese filmmaker and founder of PEOPLE FILM. His work explores themes of faith, family, and moral complexity.</p>
+      </div>
+
+      <!-- Liao Ching-Song -->
+      <div class="team-card reveal reveal-delay-1">
+        <div class="team-initial">廖</div>
+        <p class="team-name">Liao Ching-Song</p>
+        <p class="team-name-zh">廖慶松</p>
+        <p class="team-role"><span data-lang-zh>監製</span><span data-lang-en>Producer</span></p>
+        <p class="team-bio" data-lang-zh>「台灣新電影的保母」，資深剪接大師，剪輯逾百部電影。第55屆金馬獎特別貢獻獎得主。</p>
+        <p class="team-bio" data-lang-en>The "Midwife of Taiwan New Cinema." Master editor of over 100 films. Golden Horse Special Contribution Award recipient.</p>
+      </div>
+
+      <!-- Chang Han -->
+      <div class="team-card reveal reveal-delay-2">
+        <img class="team-photo" src="/commandment/still-portrait.jpg" alt="Chang Han as Jacob">
+        <p class="team-name">Chang Han</p>
+        <p class="team-name-zh">張翰</p>
+        <p class="team-role"><span data-lang-zh>主演 — 雅各</span><span data-lang-en>Lead — Jacob</span></p>
+        <p class="team-bio" data-lang-zh>台灣演員，出身電影世家。1991年以《牯嶺街少年殺人事件》出道，以正反派兼擅著稱。</p>
+        <p class="team-bio" data-lang-en>Taiwanese actor from a celebrated cinema family. Debuted in Edward Yang's <em>A Brighter Summer Day</em> (1991).</p>
+      </div>
+
+      <!-- Zhu Zhiying -->
+      <div class="team-card reveal reveal-delay-3">
+        <div class="team-initial">朱</div>
+        <p class="team-name">Jacqueline Zhu</p>
+        <p class="team-name-zh">朱芷瑩</p>
+        <p class="team-role"><span data-lang-zh>演員</span><span data-lang-en>Actress</span></p>
+        <p class="team-bio" data-lang-zh>出演逾49部影視作品。因參演李安《色，戒》獲國際關注，近作包括《我們與惡的距離 II》。</p>
+        <p class="team-bio" data-lang-en>Over 49 screen credits. Internationally recognized for Ang Lee's <em>Lust, Caution</em>. Recent: <em>The World Between Us II</em>.</p>
+      </div>
+
+      <!-- Yu Ziyu -->
+      <div class="team-card reveal">
+        <div class="team-initial">余</div>
+        <p class="team-name">Yu Ziyu</p>
+        <p class="team-name-zh">余子瑜</p>
+        <p class="team-role"><span data-lang-zh>演員</span><span data-lang-en>Actress</span></p>
+        <p class="team-bio" data-lang-zh>畢業於中央戲劇學院，橫跨電影、電視與舞台劇的多面向演員。</p>
+        <p class="team-bio" data-lang-en>Graduate of the Central Academy of Drama. A versatile performer across film, television, and theater.</p>
+      </div>
+
     </div>
   </div>
 
