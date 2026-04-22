@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>誡命 Commandment — 人民電影 PEOPLE FILM</title>
+  <meta name="description" content="《誡命》— 牛涵執導，2026劇情長片。在台北的家庭教會中，虔誠的雅各在破碎的婚姻裡愛上了一位寡婦。Commandment — a 2026 feature film by Niu Han.">
+  <meta property="og:title" content="Commandment 誡命 — PEOPLE FILM">
+  <meta property="og:description" content="A film by Niu Han. In a Taipei home church, Jacob, a devout man in a troubled marriage, falls for a widow.">
+  <meta property="og:type" content="video.movie">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --deep: #111111;
+      --charcoal: #1a1a1a;
+      --smoke: #2a2a2a;
+      --ash: #555555;
+      --silver: #999999;
+      --cream: #f5f0e8;
+      --gold: #c9a84c;
+      --gold-light: #e0c96b;
+      --gold-dim: rgba(201, 168, 76, 0.15);
+      --red: #8b2020;
+      --red-deep: #5a1010;
+      --white: #f0ece4;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Zen Kaku Gothic New', 'Noto Serif TC', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* --- BILINGUAL --- */
+    [data-lang-en] { display: none; }
+    [data-lang-zh] { display: block; }
+    html[lang="en"] [data-lang-en] { display: block; }
+    html[lang="en"] [data-lang-zh] { display: none; }
+    span[data-lang-en] { display: none; }
+    span[data-lang-zh] { display: inline; }
+    html[lang="en"] span[data-lang-en] { display: inline; }
+    html[lang="en"] span[data-lang-zh] { display: none; }
+
+    /* --- GRAIN --- */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.5;
+    }
+
+    /* --- TOP BAR --- */
+    .top-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.5s, padding 0.3s;
+    }
+
+    .top-bar.scrolled {
+      background: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 1rem 3rem;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+    }
+
+    .top-bar a {
+      text-decoration: none;
+      color: var(--white);
+    }
+
+    .back-link {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--silver) !important;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s;
+    }
+
+    .back-link:hover { color: var(--gold) !important; }
+    .back-link::before { content: '←'; font-size: 0.9rem; }
+
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .lang-toggle {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      cursor: pointer;
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      padding: 0.35rem 0.8rem;
+      transition: all 0.3s;
+      background: transparent;
+      font-family: inherit;
+    }
+
+    .lang-toggle:hover {
+      background: rgba(201, 168, 76, 0.1);
+      border-color: var(--gold);
+    }
+
+    /* --- HERO --- */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=1920&q=80') center 30%/cover no-repeat;
+      transform: scale(1.08);
+      transition: transform 10s ease-out;
+    }
+
+    .hero.loaded .hero-bg {
+      transform: scale(1);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(10, 10, 10, 1) 0%,
+        rgba(10, 10, 10, 0.7) 25%,
+        rgba(10, 10, 10, 0.2) 50%,
+        rgba(10, 10, 10, 0.3) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 6vw 8vh;
+      width: 100%;
+    }
+
+    .hero-overline {
+      font-size: 0.55rem;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s 0.4s forwards;
+    }
+
+    .hero-film-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 1.2s 0.6s forwards;
+    }
+
+    .hero-film-title-zh {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: rgba(240, 236, 228, 0.5);
+      margin-bottom: 1rem;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s 0.8s forwards;
+    }
+
+    .hero-director {
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--silver);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s 1s forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- FILM INFO SECTION --- */
+    .film-info {
+      padding: 6rem 6vw;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .film-info-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 5rem;
+    }
+
+    .synopsis-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+
+    .synopsis-text {
+      font-size: 1.1rem;
+      line-height: 2.2;
+      color: var(--silver);
+    }
+
+    .synopsis-text p { margin-bottom: 1.5rem; }
+    .synopsis-text p:last-child { margin-bottom: 0; }
+
+    /* --- FILM DETAILS SIDEBAR --- */
+    .film-details {
+      padding-top: 0.5rem;
+    }
+
+    .detail-group {
+      margin-bottom: 2.5rem;
+    }
+
+    .detail-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .detail-value {
+      font-size: 0.95rem;
+      color: var(--silver);
+      line-height: 1.8;
+    }
+
+    .detail-divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(201, 168, 76, 0.1);
+      margin-bottom: 2.5rem;
+    }
+
+    /* --- STILLS GALLERY --- */
+    .stills {
+      padding: 2rem 6vw 8rem;
+    }
+
+    .stills-header {
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+
+    .stills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+
+    .stills-grid .still {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+    }
+
+    .stills-grid .still:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+      aspect-ratio: auto;
+    }
+
+    .stills-grid .still img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(20%) contrast(1.05);
+      transition: all 0.6s ease;
+    }
+
+    .stills-grid .still:hover img {
+      filter: grayscale(0%);
+      transform: scale(1.03);
+    }
+
+    /* --- PULL QUOTE --- */
+    .pull-quote {
+      padding: 6rem 6vw;
+      text-align: center;
+      border-top: 1px solid rgba(201, 168, 76, 0.08);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+    }
+
+    .pull-quote blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 1.6;
+      max-width: 750px;
+      margin: 0 auto 1.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .pull-quote cite {
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ash);
+      font-style: normal;
+    }
+
+    /* --- BACK TO HOME CTA --- */
+    .back-cta {
+      padding: 5rem 6vw;
+      text-align: center;
+    }
+
+    .back-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      padding: 1rem 2.5rem;
+      transition: all 0.4s;
+    }
+
+    .back-cta a:hover {
+      background: rgba(201, 168, 76, 0.08);
+      border-color: var(--gold);
+      gap: 1.2rem;
+    }
+
+    .back-cta a::before { content: '←'; font-size: 0.9rem; }
+
+    /* --- FOOTER --- */
+    footer {
+      padding: 3rem 6vw;
+      border-top: 1px solid rgba(201, 168, 76, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--ash);
+    }
+
+    footer a {
+      color: var(--ash);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    footer a:hover { color: var(--gold); }
+
+    /* --- SCROLL REVEAL --- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.15s; }
+    .reveal-delay-2 { transition-delay: 0.3s; }
+    .reveal-delay-3 { transition-delay: 0.45s; }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 1024px) {
+      .film-info-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .stills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .stills-grid .still:first-child {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .top-bar { padding: 1rem 1.5rem; }
+      .top-bar.scrolled { padding: 0.8rem 1.5rem; }
+      .hero-content { padding: 0 5vw 6vh; }
+      .film-info { padding: 4rem 5vw; }
+      .stills { padding: 2rem 5vw 5rem; }
+      .stills-grid {
+        grid-template-columns: 1fr;
+      }
+      .stills-grid .still:first-child {
+        grid-column: span 1;
+      }
+      footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <a href="/" class="back-link"><span data-lang-zh>人民電影</span><span data-lang-en>PEOPLE FILM</span></a>
+    <div class="top-bar-right">
+      <button class="lang-toggle" id="langToggle">EN</button>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-overline"><span data-lang-zh>人民電影 · 2026 劇情長片</span><span data-lang-en>PEOPLE FILM · 2026 Feature</span></p>
+      <h1 class="hero-film-title">Commandment</h1>
+      <p class="hero-film-title-zh">誡命</p>
+      <p class="hero-director"><span data-lang-zh>導演</span><span data-lang-en>A film by</span> &mdash; Niu Han 牛涵</p>
+    </div>
+  </section>
+
+  <!-- FILM INFO -->
+  <div class="film-info">
+    <div class="film-info-grid">
+      <div class="synopsis-section reveal">
+        <h2><span data-lang-zh>劇情簡介</span><span data-lang-en>Synopsis</span></h2>
+        <div class="synopsis-text">
+          <p data-lang-zh>在台北的家庭教會中，虔誠的雅各深禯碊的婚姻，卻在此時愛上了一位寡婦。以「唯獨聖經」的偏執，為自己的激情找到了聖經中一多婻的依據。</p>
+          <p data-lang-en>In a Taipei home church, Jacob, a devout man in a troubled marriage, falls for a widow. Guided by a "sola-scriptura" obsession, he justifies his passion as biblically-endorsed polygamy.</p>
+          <p data-lang-zh>這種古老的邏輯衝擊了他的現代家庭、事業與信仰社群。被驅逐、被羞辱之後，雅各仍然緊抱著他獨特的義——在一個墮落的世界中，選擇自己的「誡命」。</p>
+          <p data-lang-en>This archaic reasoning shatters his modern family, business, and faith community. Expelled and humiliated, Jacob clings to his distinctive righteousness, choosing his own "commandment" in a fallen world.</p>
+        </div>
+      </div>
+
+      <div class="film-details reveal reveal-delay-1">
+        <div class="detail-divider"></div>
+        <div class="detail-group">
+          <p class="detail-label"><span data-lang-zh>導演</span><span data-lang-en>Director</span></p>
+          <p class="detail-value">Niu Han 牛涵</p>
+        </div>
+        <div class="detail-group">
+          <p class="detail-label"><span data-lang-zh>類型</span><span data-lang-en>Genre</span></p>
+          <p class="detail-value"><span data-lang-zh>劇情</span><span data-lang-en>Drama</span></p>
+        </div>
+        <div class="detail-group">
+          <p class="detail-label"><span data-lang-zh>年份</span><span data-lang-en>Year</span></p>
+          <p class="detail-value">2026</p>
+        </div>
+        <div class="detail-group">
+          <p class="detail-label"><span data-lang-zh>語言</span><span data-lang-en>Language</span></p>
+          <p class="detail-value"><span data-lang-zh>華語</span><span data-lang-en>Mandarin</span></p>
+        </div>
+        <div class="detail-group">
+          <p class="detail-label"><span data-lang-zh>製片公司</span><span data-lang-en>Production</span></p>
+          <p class="detail-value"><span data-lang-zh>人民電影有限公司</span><span data-lang-en>PEOPLE FILM CO., LTD</span></p>
+        </div>
+        <div class="detail-group">
+          <p class="detail-label"><span data-lang-zh>拍攝地點</span><span data-lang-en>Location</span></p>
+          <p class="detail-value"><span data-lang-zh>台北, 台灣</span><span data-lang-en>Taipei, Taiwan</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="pull-quote reveal">
+    <blockquote>
+      <span data-lang-zh>「在一個墮落的世界裡，每個人都在書寫自己的誡命。」</span>
+      <span data-lang-en>"In a fallen world, everyone writes their own commandment."</span>
+    </blockquote>
+  </div>
+
+  <!-- STILLS -->
+  <div class="stills">
+    <p class="stills-header reveal"><span data-lang-zh>劇照</span><span data-lang-en>Stills</span></p>
+    <div class="stills-grid">
+      <div class="still reveal">
+        <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=1200&q=80" alt="Film still 1">
+      </div>
+      <div class="still reveal reveal-delay-1">
+        <img src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=600&q=80" alt="Film still 2">
+      </div>
+      <div class="still reveal reveal-delay-2">
+        <img src="https://images.unsplash.com/photo-1505533542167-8c89838bb19e?w=600&q=80" alt="Film still 3">
+      </div>
+      <div class="still reveal reveal-delay-3">
+        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&q=80" alt="Film still 4">
+      </div>
+      <div class="still reveal">
+        <img src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=600&q=80" alt="Film still 5">
+      </div>
+    </div>
+  </div>
+
+  <!-- BACK CTA -->
+  <div class="back-cta reveal">
+    <a href="/">
+      <span data-lang-zh>返回人民電影</span>
+      <span data-lang-en>Back to PEOPLE FILM</span>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>&copy; 2026 <span data-lang-zh>人民電影有限公司</span><span data-lang-en>PEOPLE FILM CO., LTD</span></span>
+    <span><span data-lang-zh>台灣台北</span><span data-lang-en>Taipei, Taiwan</span></span>
+  </footer>
+
+  <script>
+    // --- TOP BAR SCROLL ---
+    const topBar = document.querySelector('.top-bar');
+    window.addEventListener('scroll', () => {
+      topBar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // --- HERO LOAD ---
+    window.addEventListener('load', () => {
+      document.querySelector('.hero').classList.add('loaded');
+    });
+
+    // --- BILINGUAL ---
+    const langToggle = document.getElementById('langToggle');
+    let currentLang = 'zh';
+    langToggle.addEventListener('click', () => {
+      currentLang = currentLang === 'zh' ? 'en' : 'zh';
+      document.documentElement.lang = currentLang === 'zh' ? 'zh-Hant' : 'en';
+      langToggle.textContent = currentLang === 'zh' ? 'EN' : '中文';
+    });
+
+    // --- SCROLL REVEAL ---
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
